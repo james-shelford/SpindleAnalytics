@@ -13,7 +13,7 @@ The ImageJ script was written to analyse a folder containing multi channel image
 
 * The parent directory `SpindleAnalytics` contains subdirectories; `Data`, where the output from ImageJ and the `lookup.csv` are located; `Output`, where the dataframes and plots are saved to the directories `Dataframe` and `Plots`, respectively; and `Scripts`, where the ImageJ and R code are located. 
 * Within `Data` there are subdirectories containing the ImageJ output from separate experiments, each labelled with their unique experiment number (e.g. `JS149`). 
-* Analysis was performed blind to the conditions of the experiment so `log.txt` and `lookup.csv` are required and loaded in R to add the original labels.
+* Analysis was performed blind to the conditions of the experiment so `log.txt` and `lookup.csv` are processed in R to add the original labels.
 
 ### Running the code
 
