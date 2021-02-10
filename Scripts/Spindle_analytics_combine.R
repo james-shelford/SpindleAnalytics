@@ -1,4 +1,4 @@
-# Spindle analytics data visualisation, written bu James Shelford
+# Spindle analytics data visualisation, written by James Shelford
 # Script to load and combine the dataframes generated in the spindle_analytics_process script and produce plots
 
 # Working directory should be 'SpindleAnalytics'
@@ -40,6 +40,9 @@ combined_df$Treatment <- as.factor(combined_df$Treatment)
 # Set the levels for plotting in a specific order
 combined_df$Condition <- factor(combined_df$Condition, levels = c('Condition 1', 'Condition 2', 'Condition 3', 'Condition 4'))
 combined_df$Treatment <- factor(combined_df$Treatment, levels = c('Control', 'Treatment'))
+
+# Remove NaN
+combined_df <- na.omit(combined_df)
 
 # Function to generate the plots
 # theme_cowplot removes grey background
@@ -88,18 +91,3 @@ combined_plot
 # Save the plots
 ggsave("Output/Plots/combined_plot.png", plot = combined_plot, dpi = 300)
 ggsave("Output/Plots/combined_plot.pdf", plot = combined_plot, width = 250, height = 250, units = 'mm', useDingbats = FALSE)
-
-# Summary statistics
-summary_table <- combined_df %>% group_by(Condition, Treatment) %>% summarise_at(vars(centrosome_centrosome_dist), list(mean_spindle_length = mean, standard_dev = sd))
-
-# Multiple comparisons
-# all_aov2 <- aov(centrosome_centrosome_dist ~ Treatment + Cell_Line, data = combined_df)
-# summary(all_aov2)
-all_aov3 <- aov(centrosome_centrosome_dist ~ Treatment * Condition, data = combined_df)
-summary(all_aov3)
-TukeyHSD(all_aov3, which = "Condition")
-pairwise.t.test(combined_df$centrosome_centrosome_dist, combined_df$Condition,
-                p.adjust.method = "BH")
-# for unequal groups
-library(car)
-Anova(all_aov3, type = "III")
