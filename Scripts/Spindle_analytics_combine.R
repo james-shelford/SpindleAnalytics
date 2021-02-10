@@ -89,5 +89,5 @@ combined_plot <- plot_grid(combined_plot, legend, ncol = 1, rel_heights = c(1, .
 combined_plot
 
 # Save the plots
-ggsave("Output/Plots/combined_plot.png", plot = combined_plot, dpi = 300)
+ggsave("Output/Plots/combined_plot.png", plot = combined_plot, dpi = 300, width = 250, height = 250, units = 'mm')
 ggsave("Output/Plots/combined_plot.pdf", plot = combined_plot, width = 250, height = 250, units = 'mm', useDingbats = FALSE)
