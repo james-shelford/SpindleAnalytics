@@ -40,3 +40,8 @@ The R script calculates a number of parameters that can be used to describe the 
 
 
 ## Outputs
+
+The `Spindle_analytics_combine.R` script will generate plots that compare the calculated parameters between different conditions and treatments. In the example output provided, a violin plot and box plot are used to display the distribution, median, interquartile range and max and min values of the data. 
+
+|<img src="Output/Plots/combined_plot.png" alt="Example output"> 
+|:--:|
