@@ -34,7 +34,7 @@ The R script calculates a number of parameters that can be used to describe the 
 * L1 and L2 offset (where L1 and L2 are the distances between the spindle edge and the cell cortex)
 * Spindle offset (distance between the center of the cell and center of the spindle)
 
-| ![Schematic of mitotic cell](Example/metaphase_cell.png) 
+|<img src="Example/metaphase_cell.png" alt="Schematic of mitotic cell" width="400"> 
 |:--:|
 | *Schematic of a cell in metaphase. The microtubules are shown in black, the centrosomes are shown in blue and the metaphase plate is defined by the chromosomes in red.* |
 
