@@ -121,6 +121,10 @@ make_the_plot <- function(df_for_plotting, xCol, yCol, yLab){
 spindle_length_plot <- make_the_plot(output, "Category", "centrosome_centrosome_dist", "Spindle length (microns)")
 ggsave(paste0("Output/Plots/",expt,"_spindle_length.pdf"), plot = spindle_length_plot)
 
+# make directory for Data if it doesn't exist
+ifelse(!dir.exists("Output"), dir.create("Output"), "Folder exists already")
+ifelse(!dir.exists("Output/Dataframe"), dir.create("Output/Dataframe"), "Folder exists already")
+
 # Add the experiment number to the df and save
 output$Experiment_number <- expt
-saveRDS(output, file = paste0("Output/Data/length_", expt, ".rds"))
+saveRDS(output, file = paste0("Output/Dataframe/length_", expt, ".rds"))
