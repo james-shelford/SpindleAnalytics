@@ -8,6 +8,7 @@ library(ggplot2)
 library(dplyr)
 library(ggbeeswarm)
 library(cowplot)
+library(gridGraphics)
 
 # make directory for plots if it doesn't exist (it should)
 ifelse(!dir.exists("Output"), dir.create("Output"), "Folder exists already")
